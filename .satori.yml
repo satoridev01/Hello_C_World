@@ -1,0 +1,16 @@
+settings:
+  name: CI Tests for my Hello C World
+  onLogFail: slack-monitor # Define your notification on Team Settings in case your tests Fail
+
+import:
+- "satori://search/trufflehog.yml"
+
+tests:
+  assertReturnCode: 0
+  build:
+  - [ make ]
+
+  run:
+    assertStdoutContains: "An expected output" # assert the output of    the main system execution of your project
+    your_project:
+    - [ ./your_project ]
