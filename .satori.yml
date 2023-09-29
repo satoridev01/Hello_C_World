@@ -2,7 +2,7 @@ settings:
   name: CI Tests for my Hello C World
 
 import:
-- "satori://search/trufflehog.yml"
+- "satori://code/trufflehog.yml"
 
 tests:
   assertReturnCode: 0
