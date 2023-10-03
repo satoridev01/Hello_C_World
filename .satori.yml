@@ -1,15 +1,13 @@
 settings:
   name: CI Tests for my Hello C World
 
-import:
-- "satori://code/trufflehog.yml"
-
 tests:
   assertReturnCode: 0
+  install:
+  - [ apt install -qq -y gcc make ]
   build:
   - [ make ]
-
   run:
-    assertStdoutContains: "An expected output" # assert the output of    the main system execution of your project
+    assertStdoutContains: "Hello World"
     your_project:
-    - [ ./my_project ]
+    - [ ./hello ]
