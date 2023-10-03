@@ -1,4 +1,4 @@
-all: my_project
+all: hello
 
-my_project: main.c
-	gcc -o my_project main.c
+hello: main.c
+	gcc -o hello main.c
