@@ -1,13 +1,20 @@
 settings:
   name: CI Tests for my Hello C World
 
+# run `satori playbooks --public` to get a list of public playbooks to import and use on your project
+import:
+- "satori://code/trufflehog.yml"
+
+# project tests
 tests:
+  # all executions will return 0
   assertReturnCode: 0
   install:
-  - [ apt install -qq -y gcc make ]
+  - apt install -qq -y gcc make
   build:
-  - [ make ]
+  - make
   run:
+    # and the output will be validated
     assertStdoutContains: "Hello World"
     your_project:
-    - [ ./hello ]
+    - ./hello
