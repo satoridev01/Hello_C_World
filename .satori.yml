@@ -3,7 +3,7 @@ settings:
 
 # run `satori playbooks --public` to get a list of public playbooks to import and use on your project
 import:
-- "satori://code/trufflehog.yml"
+- "satori://secrets/trufflehog.yml"
 
 # project tests
 tests:
